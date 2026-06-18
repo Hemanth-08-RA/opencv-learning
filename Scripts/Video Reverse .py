@@ -14,16 +14,21 @@ while True:
     if not check:
         break
     frame_list.append(frame)
-
 cap.release()
 
 # Reverse playback
 frame_list.reverse()
 
+fps = cap.get(cv2.CAP_PROP_FPS) if hasattr(cap, 'get') else 30.0
+if not fps or fps <= 0:
+    fps = 30.0
+wait_ms = int(1000 / fps)
+print(f"Loaded {len(frame_list)} frames. FPS={fps}, wait={wait_ms}ms")
+
 for frame in frame_list:
     cv2.imshow("Video", frame)
-    if cv2.waitKey(25) & 0xFF == ord("q"):
+    if cv2.waitKey(wait_ms) & 0xFF == ord("q"):
         break
 
-cv2.destroyAllWindows()
 
+cv2.destroyAllWindows()
