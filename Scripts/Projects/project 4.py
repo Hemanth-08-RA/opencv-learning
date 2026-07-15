@@ -14,8 +14,9 @@ cv2.createTrackbar("R", window_name, 0, 255, emptyFunction)
 
 while True:
     cv2.imshow(window_name, img)
+    if cv2.waitKey(1) == 27:
+        break
     
-    # Get the current positions of the trackbars
     b = cv2.getTrackbarPos("B", window_name)
     g = cv2.getTrackbarPos("G", window_name)
     r = cv2.getTrackbarPos("R", window_name)
