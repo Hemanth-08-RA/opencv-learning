@@ -1,8 +1,8 @@
 # Car Detection
 import cv2
 
-cascade = r"C:\Users\asus\Downloads\cars (1).xml"
-Video = r"C:\Users\asus\Downloads\WhatsApp Video 2026-07-20 at 10.58.27 PM.mp4"
+cascade = r"C:\Users\asus\OneDrive\Desktop\Learn_CV\Libraries\cars (1).xml"
+Video = r"C:\Users\asus\OneDrive\Desktop\Learn_CV\Libraries\WhatsApp Video 2026-07-20 at 10.58.27 PM.mp4"
 
 cap = cv2.VideoCapture(Video)
 car_cascade = cv2.CascadeClassifier(cascade)
