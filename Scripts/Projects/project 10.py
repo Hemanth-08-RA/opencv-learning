@@ -4,7 +4,8 @@ import cv2
 import numpy as np
 
 img = cv2.imread(r"C:\Users\asus\OneDrive\Desktop\Learn_CV\images\img.jpeg",0)
-template = cv2.imread(r"C:\Users\asus\OneDrive\Desktop\Learn_CV\images\Footbaal.jpeg",0)
+#template = cv2.imread(r"C:\Users\asus\OneDrive\Desktop\Learn_CV\images\Footbaal.jpeg",0)
+template = cv2.imread(r"C:\Users\asus\OneDrive\Desktop\Learn_CV\images\LeftBaal.jpeg",0)
 
 h,w = template.shape
 
@@ -26,5 +27,8 @@ for meathod in methods:
 
     cv2.imshow("result",img2)
 
-    cv2.waitKey(0)
+    key = cv2.waitKey(0)
     cv2.destroyAllWindows()
+    
+    if key == 27:
+        break
